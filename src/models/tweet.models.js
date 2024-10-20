@@ -5,15 +5,14 @@ const tweetSchema = new Schema(
         content: {
             type: String,
             required: true,
+            max:[200, "Tweet can not be more than 200 characters"],
         },
-        userEmail:{
-            type: String,
-        },
-        author: {
-            type: Schema.Types.ObjectId,
-            ref: "User",
-            required: true,
-        },
+        hashtags:[
+            {
+                type: Schema.Types.ObjectId,
+                ref: "Hashtag",
+            }
+        ]
     },
     {
         timestamps: true,
