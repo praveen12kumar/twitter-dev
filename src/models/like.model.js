@@ -8,6 +8,12 @@ const likeSchema = new Schema({
         enum:['Tweet', 'Comment']
     },
 
+    reactionType:{
+        type: String,
+        enum:["like", "happy", "sad", "lough", "cry"]
+        
+    },
+
     likeable:{
         type: Schema.Types.ObjectId,
         required: true,
