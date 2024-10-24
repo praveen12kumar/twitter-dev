@@ -26,14 +26,14 @@ app.listen(process.env.PORT, async () => {
     await connect();
     console.log(`Server is listening on port: ${process.env.PORT}`); 
     
-    const userRepo = new UserRepository();
-    const users = await userRepo.getAll();
+    // const userRepo = new UserRepository();
+    // const users = await userRepo.getAll();
 
-    const likeService = new LikeService();
+    // const likeService = new LikeService();
 
-    await likeService.toggleLike({
-        modelId:"6719c94554ea8c1a5cd9b68d",
-        modelType:"Tweet",
-        userId:users[0]._id,
-    })
+    // await likeService.toggleLike({
+    //     modelId:"6719c94554ea8c1a5cd9b68d",
+    //     modelType:"Tweet",
+    //     userId:users[0]._id,
+    // })
 }) 

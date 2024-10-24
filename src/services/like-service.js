@@ -7,8 +7,8 @@ class LikeService{
         this.tweetRepository = new TweetRepository();
     }
 
-    async toggleLike({modelId, modelType, userId}){  // api1/v1/likes/toggle?id="modelId"&type="Tweet"
-               
+    async toggleLike(modelId, modelType, userId){  // api1/v1/likes/toggle?id="modelId"&type="Tweet"
+            //   console.log(modelId, modelType, userId);
         try {
             if(modelType === "Tweet"){
                 
@@ -29,7 +29,6 @@ class LikeService{
             }) 
 
             if(exists){
-                console.log("exists", exists);
                 likeable.likes.pull(exists.id);
                 await likeable.save();
                 await exists.deleteOne();
