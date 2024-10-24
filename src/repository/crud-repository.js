@@ -24,11 +24,12 @@ class CrudRepository{
     }
 
     async get(id){
+
         try {
             const response = await this.model.findById(id);
             return response;
         } catch (error) {
-            console.log(error);
+            console.log(error) ;
             throw error;
         }
     }
