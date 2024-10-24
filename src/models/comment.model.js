@@ -1,4 +1,4 @@
-import { Schema } from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
 const commentSchema = new Schema(
     {
@@ -20,7 +20,13 @@ const commentSchema = new Schema(
             type: Schema.Types.ObjectId,
             refPath:'onModel',
             required: true
-        }
+        },
+        comments:[
+            {
+                type: Schema.Types.ObjectId,
+                ref: "Comment",
+            }
+        ]
     },
     {
         timestamps: true,
